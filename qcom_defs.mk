@@ -11,3 +11,10 @@ UM_4_19_FAMILY := kona lito bengal
 UM_5_4_FAMILY := lahaina holi
 UM_5_10_FAMILY := taro parrot
 UM_5_15_FAMILY := kalama crow
+
+
+ifeq ($(TARGET_KERNEL_VERSION),5.15)
+# UM 4.19 upgraded to UM 5.15
+UM_5_15_FAMILY := $(UM_5_15_FAMILY) $(UM_4_19_FAMILY)
+UM_4_19_FAMILY :=
+endif
